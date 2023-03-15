@@ -9,10 +9,7 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
-import * as $$$0 from "./sections/GetStarted.tsx";
-import * as $$$1 from "./sections/Head.tsx";
-import * as $$$2 from "./sections/Markdown.tsx";
-import * as $$$3 from "./sections/QuillText.tsx";
+import * as $$$0 from "./sections/Head.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -23,31 +20,9 @@ const manifest: DecoManifest = {
     "./routes/index.tsx": $3,
   },
   islands: { "./islands/LiveControls.tsx": $$0 },
-  sections: {
-    "./sections/GetStarted.tsx": $$$0,
-    "./sections/Head.tsx": $$$1,
-    "./sections/Markdown.tsx": $$$2,
-    "./sections/QuillText.tsx": $$$3,
-  },
+  sections: { "./sections/Head.tsx": $$$0 },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
-    "./sections/GetStarted.tsx": {
-      "inputSchema": {
-        "title": " Get Started",
-        "type": "object",
-        "properties": {
-          "enableInspectVSCode": {
-            "type": [
-              "boolean",
-              "null",
-            ],
-            "title": "Enable Inspect V S Code",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
     "./sections/Head.tsx": {
       "inputSchema": {
         "title": " Head",
@@ -69,16 +44,17 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Image Url",
           },
-          "faviconUrl": {
+          "type": {
             "type": "string",
-            "title": "Favicon Url",
+            "title": "Type",
           },
-          "styleUrls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
-            "title": "Style Urls",
+          "twitterCard": {
+            "type": "string",
+            "title": "Twitter Card",
+          },
+          "twitterSite": {
+            "type": "string",
+            "title": "Twitter Site",
           },
           "themeColor": {
             "type": "string",
@@ -90,42 +66,10 @@ const manifest: DecoManifest = {
           "description",
           "url",
           "imageUrl",
-          "faviconUrl",
-          "styleUrls",
+          "type",
+          "twitterCard",
+          "twitterSite",
           "themeColor",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/Markdown.tsx": {
-      "inputSchema": {
-        "title": " Markdown",
-        "type": "object",
-        "properties": {
-          "text": {
-            "type": "string",
-            "title": "Text",
-          },
-        },
-        "required": [
-          "text",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/QuillText.tsx": {
-      "inputSchema": {
-        "title": " Quill Text",
-        "type": "object",
-        "properties": {
-          "html": {
-            "format": "html",
-            "type": "string",
-            "title": "Html",
-          },
-        },
-        "required": [
-          "html",
         ],
       },
       "outputSchema": null,
