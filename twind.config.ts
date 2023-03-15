@@ -13,8 +13,15 @@ export default {
         primary: "#2FD180",
         "primary-dark": "#003232",
         "primary-light": "#C5FFE9",
+        secondary: "#F5F6F6",
         transparent: "transparent",
       },
+      textColor: {
+        primary: "#2F3031",
+        secondary: "#161616",
+        common: "#66736C",
+      },
+
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],
         serif: ["serif"],
