@@ -40,21 +40,14 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Url",
           },
-          "imageUrl": {
+          "image": {
+            "format": "image-uri",
             "type": "string",
-            "title": "Image Url",
+            "title": "Image",
           },
           "type": {
             "type": "string",
             "title": "Type",
-          },
-          "twitterCard": {
-            "type": "string",
-            "title": "Twitter Card",
-          },
-          "twitterSite": {
-            "type": "string",
-            "title": "Twitter Site",
           },
           "themeColor": {
             "type": "string",
@@ -65,10 +58,8 @@ const manifest: DecoManifest = {
           "title",
           "description",
           "url",
-          "imageUrl",
+          "image",
           "type",
-          "twitterCard",
-          "twitterSite",
           "themeColor",
         ],
       },
