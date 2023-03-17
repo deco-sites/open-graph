@@ -47,6 +47,16 @@ const manifest: DecoManifest = {
           },
           "type": {
             "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "website",
+              },
+              {
+                "type": "string",
+                "const": "article",
+              },
+            ],
             "title": "Type",
           },
           "themeColor": {

@@ -7,9 +7,11 @@ export interface Props {
   description: string;
   url: string;
   image: LiveImage;
-  type: string;
+  type: OGType;
   themeColor: string;
 }
+
+export type OGType = "website" | "article";
 
 export default function HeadComponent({
   title = "deco.cx — starter site",
@@ -19,6 +21,9 @@ export default function HeadComponent({
   type = "website",
   themeColor = "#003232",
 }: Props) {
+  function getTwitterCardValue() {
+    return type === "website" ? "summary" : "summary_large_image";
+  }
   return (
     <>
       <Head>
@@ -26,13 +31,14 @@ export default function HeadComponent({
         <meta property="og:description" content={description} />
         <meta property="og:type" content={type} />
         <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} /> 
+        <meta property="og:image" content={image} />
+        <meta property="twitter:card" content={getTwitterCardValue()} />
 
         <title>{title}</title>
         <meta name="theme-color" content={themeColor} />
-        <meta name="description" content={description} />      
+        <meta name="description" content={description} />
       </Head>
-      
+
       <Header />
       <ViewOpenGraph />
     </>
