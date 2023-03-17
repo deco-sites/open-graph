@@ -1,4 +1,5 @@
 import WhatsApp from "./WhatsApp.tsx";
+import PreviewItem from "./PreviewItem.tsx";
 
 export default function Preview() {
   return (
@@ -10,7 +11,9 @@ export default function Preview() {
         </p>
       </header>
 
-      <WhatsApp />
+      <PreviewItem title="WhatsApp">
+        <WhatsApp />
+      </PreviewItem>
     </section>
   );
 }
