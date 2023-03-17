@@ -14,7 +14,9 @@ export default {
         "primary-dark": "#003232",
         "primary-light": "#C5FFE9",
         secondary: "#F5F6F6",
+        divider: "#D4DBD7",
         transparent: "transparent",
+        "linkedin-bg": "#EFF3F8",
       },
       textColor: {
         primary: "#2F3031",
@@ -24,6 +26,7 @@ export default {
 
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],
+        inter: ["'Inter'", "sans-serif"],
         serif: ["serif"],
       },
     },

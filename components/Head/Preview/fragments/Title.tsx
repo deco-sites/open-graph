@@ -10,8 +10,7 @@ export default function Title(props: Props) {
       <h2 class="uppercase text-[13px] text-primary  pr-4 leading-4 font-semibold">
         {props.children}
       </h2>
-
-      <div class="flex-grow h-px bg-gray-400"></div>
+      <div class="flex-grow h-px bg-divider"></div>
     </div>
   );
 }
