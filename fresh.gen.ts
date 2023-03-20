@@ -63,24 +63,6 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Theme Color",
           },
-          "dimensions": {
-            "title": "Dimensions",
-            "type": "object",
-            "properties": {
-              "width": {
-                "type": "number",
-                "title": "Width",
-              },
-              "height": {
-                "type": "number",
-                "title": "Height",
-              },
-            },
-            "required": [
-              "width",
-              "height",
-            ],
-          },
         },
         "required": [
           "title",
