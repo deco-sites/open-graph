@@ -1,6 +1,6 @@
 import { Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
-import Slack from "./Slack.tsx";
+import {SlackArticle, SlackWebsite} from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
 
@@ -16,8 +16,10 @@ export default function Preview(props: Props) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="WhatsApp">
-          <WhatsApp />
+        <PreviewItem title="Slack">
+
+          <SlackWebsite {...props} />
+          
         </PreviewItem>
       </div>
     </section>

@@ -21,12 +21,12 @@ export default {
       textColor: {
         primary: "#2F3031",
         secondary: "#161616",
+        third: "#2E6ED9",
         common: "#66736C",
       },
 
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],
-        inter: ["'Inter'", "sans-serif"],
         serif: ["serif"],
       },
     },

@@ -21,7 +21,7 @@ export default function LinkedIn(props: LinkedInProps) {
         height={200}
       />
       <div class="px-4 py-3 bg-linkedin-bg ">
-        <p class="text-sm font-thin font-inter text-secondary leading-[19px]">
+        <p class="text-sm font-thin  text-secondary leading-[19px]">
           {title}
         </p>
         <p class="text-xs font-normal text-common leading-[19px]">
