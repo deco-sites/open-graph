@@ -1,6 +1,6 @@
 import { Props } from "./inteface.tsx";
 import { Head } from "$fresh/runtime.ts";
-import Preview from "./Preview/Preview.tsx";
+import PreviewHandler from "./Preview/Preview.tsx";
 
 export default function HeadComponent(props: Props) {
   const { title, description, url, image, type, themeColor } = props;
@@ -24,10 +24,9 @@ export default function HeadComponent(props: Props) {
         <title>{title}</title>
         <meta name="theme-color" content={themeColor} />
         <meta name="description" content={description} />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
 
-      <Preview {...props} />
+      <PreviewHandler {...props} />
     </>
   );
 }

@@ -1,12 +1,8 @@
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
+import { Props } from "../inteface.tsx";
 
-interface LinkedInProps {
-  image: LiveImage;
-  title: string;
-}
-
-export default function LinkedIn(props: LinkedInProps) {
+export default function LinkedIn(props: Props) {
   const { image, title } = props;
 
   return (
@@ -21,7 +17,7 @@ export default function LinkedIn(props: LinkedInProps) {
         height={200}
       />
       <div class="px-4 py-3 bg-linkedin-bg ">
-        <p class="text-sm font-thin font-inter text-secondary leading-[19px]">
+        <p class="text-sm font-thin text-secondary leading-[19px]">
           {title}
         </p>
         <p class="text-xs font-normal text-common leading-[19px]">
