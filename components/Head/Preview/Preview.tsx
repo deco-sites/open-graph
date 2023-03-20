@@ -1,8 +1,12 @@
+import { Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
 import Slack from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
+import LinkedIn from "./LinkedIn.tsx";
 
-export default function Preview() {
+export default function Preview(props: Props) {
+  const { title, description, url, image, type, themeColor } = props;
+
   return (
     <section>
       <header class="px-10 py-8 text-primary">
@@ -11,13 +15,11 @@ export default function Preview() {
           How your website is displayed on search engines and social media
         </p>
       </header>
-
-      <PreviewItem title="WhatsApp">
-        <WhatsApp />
-      </PreviewItem>
-      <PreviewItem title="Slack">
-        <Slack />
-      </PreviewItem>
+      <div class="pl-10">
+        <PreviewItem title="WhatsApp">
+          <WhatsApp />
+        </PreviewItem>
+      </div>
     </section>
   );
 }

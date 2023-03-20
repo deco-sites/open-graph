@@ -24,9 +24,10 @@ export default function HeadComponent(props: Props) {
         <title>{title}</title>
         <meta name="theme-color" content={themeColor} />
         <meta name="description" content={description} />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
 
-      <Preview />
+      <Preview {...props} />
     </>
   );
 }
