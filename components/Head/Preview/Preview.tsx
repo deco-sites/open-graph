@@ -1,4 +1,5 @@
 import WhatsApp from "./WhatsApp.tsx";
+import Slack from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 
 export default function Preview() {
@@ -13,6 +14,9 @@ export default function Preview() {
 
       <PreviewItem title="WhatsApp">
         <WhatsApp />
+      </PreviewItem>
+      <PreviewItem title="Slack">
+        <Slack />
       </PreviewItem>
     </section>
   );
