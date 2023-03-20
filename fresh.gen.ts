@@ -8,7 +8,7 @@ import * as $0 from "./routes/[...catchall].tsx";
 import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
-
+import * as $$0 from "./islands/Head.tsx";
 import * as $$$0 from "./sections/Head.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
@@ -19,7 +19,7 @@ const manifest: DecoManifest = {
     "./routes/_middleware.ts": $2,
     "./routes/index.tsx": $3,
   },
-  islands: {},
+  islands: { "./islands/Head.tsx": $$0 },
   sections: { "./sections/Head.tsx": $$$0 },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
@@ -62,6 +62,24 @@ const manifest: DecoManifest = {
           "themeColor": {
             "type": "string",
             "title": "Theme Color",
+          },
+          "dimensions": {
+            "title": "Dimensions",
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "number",
+                "title": "Width",
+              },
+              "height": {
+                "type": "number",
+                "title": "Height",
+              },
+            },
+            "required": [
+              "width",
+              "height",
+            ],
           },
         },
         "required": [
