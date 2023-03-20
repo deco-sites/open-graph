@@ -14,5 +14,20 @@ export interface Props {
   image: LiveImage;
   type: OGType;
   themeColor: string;
-  dimensions?: Dimensions;
+}
+
+export interface PreviewProps {
+  props: Props;
+  dimensions: Dimensions;
+}
+
+export interface PreviewItens {
+  title: string;
+  description: string;
+  url: string;
+  image: LiveImage;
+  type: OGType;
+  themeColor: string;
+  width: number;
+  height: number;
 }

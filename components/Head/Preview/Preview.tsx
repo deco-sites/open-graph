@@ -1,44 +1,44 @@
-import { Dimensions, Props } from "../inteface.tsx";
+import { Dimensions, PreviewProps, Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
-import { signal, useSignal } from "@preact/signals";
-import { useEffect, useRef } from "preact/hooks";
+import { useSignal } from "@preact/signals";
+import { useRef } from "preact/hooks";
+import Facebook from "./Facebook.tsx";
 
 export default function PreviewHandler(propsOriginais: Props) {
   const { title, description, url, image, type, themeColor } = propsOriginais;
   const dimensions = useSignal<Dimensions>({ width: 0, height: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
 
-  useEffect(() => {
-    handleLoad();
-  }, [imageRef.current]);
+  const getMeta = async (url: string) => {
+    if (typeof document !== "undefined") {
+      const img = document.createElement("img");
+      img.src = url;
+      await img.decode();
+      return img;
+    }
+  };
 
-  function handleLoad() {
-    const img = imageRef.current;
-    if (img !== null) {
+  getMeta(image).then((img) => {
+    if (img !== undefined) {
       dimensions.value = {
         width: img.width,
         height: img.naturalHeight,
       };
     }
-  }
+  });
 
   return (
     <>
-      <img
-        ref={imageRef}
-        src={image}
-        style={{ display: "none" }}
-      />
-      <Preview {...propsOriginais} />
+      <Preview props={propsOriginais} dimensions={dimensions.value} />
     </>
   );
 }
 
-function Preview(props: Props) {
-  const { title, description, url, image, type, themeColor, dimensions } =
-    props;
+function Preview({ props, dimensions }: PreviewProps) {
+  const { title, description, url, image, type, themeColor } = props;
+  const { width, height } = dimensions;
 
   return (
     <section>
@@ -49,8 +49,8 @@ function Preview(props: Props) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="WhatsApp">
-          <WhatsApp />
+        <PreviewItem title="Facebook">
+          <Facebook {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
