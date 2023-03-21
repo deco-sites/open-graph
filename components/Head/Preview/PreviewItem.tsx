@@ -13,7 +13,7 @@ export default function PreviewItem(
   return (
     <div class="w-[400px] flex flex-col gap-[16px] sm:w-[522px]">
       <Title>{title}</Title>
-      <div class="text-[13px] leading-[20px]">
+      <div class="text-[13px] text-primary leading-[20px]">
         <p>Instructions:</p>
         <ul>
           {instructions.map((instruction) => (
