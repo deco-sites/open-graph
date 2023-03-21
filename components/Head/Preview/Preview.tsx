@@ -9,6 +9,7 @@ import Telegram from "./Telegram.tsx";
 import Google from "./Google.tsx";
 import Twitter from "./Twitter.tsx";
 import Slack from "./Slack.tsx";
+import instructions from "./instructions.json" assert { type: "json" };
 
 export default function PreviewHandler(propsOriginais: Props) {
   const { title, description, url, image, type, themeColor } = propsOriginais;
@@ -54,25 +55,25 @@ function Preview({ props, dimensions }: PreviewProps) {
       </header>
       <div class="flex flex-col max-w-[1156px] items-center">
         <div class="flex flex-col items-center gap-[32px] mb-[20px] lg:(grid grid-cols-2 items-start justify-center)">
-          <PreviewItem title="Goggle">
+          <PreviewItem instructions={instructions.google} title="Goggle">
             <Google {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Linkedin">
+          <PreviewItem instructions={instructions.linkedin} title="Linkedin">
             <LinkedIn {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Whatsapp">
+          <PreviewItem instructions={instructions.whatsapp} title="Whatsapp">
             <WhatsApp {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Telegram">
+          <PreviewItem instructions={instructions.telegram} title="Telegram">
             <Telegram {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Facebook">
+          <PreviewItem instructions={instructions.facebook} title="Facebook">
             <Facebook {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Twitter">
+          <PreviewItem instructions={instructions.twitter} title="Twitter">
             <Twitter {...{ ...props, ...dimensions }} />
           </PreviewItem>
-          <PreviewItem title="Slack">
+          <PreviewItem instructions={instructions.slack} title="Slack">
             <Slack {...{ ...props, ...dimensions }} />
           </PreviewItem>
         </div>
