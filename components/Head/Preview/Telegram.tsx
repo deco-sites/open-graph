@@ -10,7 +10,7 @@ function TelegramBiggerImage(props: PreviewItens) {
       <div>
         <Image
           src={image}
-          alt="Grogu"
+          alt={title}
           class="rounded-[6px] w-[454px] max-h-[432px] object-fill"
           decoding="async"
           loading="lazy"
@@ -43,7 +43,7 @@ function TelegramSmallerImage(props: PreviewItens) {
       <div>
         <Image
           src={image}
-          alt="Grogu"
+          alt={title}
           class="rounded-[6px] "
           decoding="async"
           loading="lazy"
@@ -68,6 +68,10 @@ function TelegramSmallerImage(props: PreviewItens) {
 
 function Telegram(props: PreviewItens) {
   const { image, title, description, width, height } = props;
+
+  if (width === 0) {
+    return <div></div>;
+  }
 
   if (width < 300 || height < 300 && width !== 0) {
     return <TelegramSmallerImage {...props} />;
