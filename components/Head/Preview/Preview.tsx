@@ -6,6 +6,7 @@ import LinkedIn from "./LinkedIn.tsx";
 import { useSignal } from "@preact/signals";
 import { useRef } from "preact/hooks";
 import Facebook from "./Facebook.tsx";
+import Telegram from "./Telegram.tsx";
 
 export default function PreviewHandler(propsOriginais: Props) {
   const { title, description, url, image, type, themeColor } = propsOriginais;
@@ -51,7 +52,7 @@ function Preview({ props, dimensions }: PreviewProps) {
       </header>
       <div class="pl-10">
         <PreviewItem title="Slack">
-          <SlackWebsite {...{ ...props, ...dimensions }} />
+          <Telegram {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
