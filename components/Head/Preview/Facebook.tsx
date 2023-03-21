@@ -96,7 +96,7 @@ function Facebook(props: PreviewItens) {
     return <FacebookMediumOpenGraph {...props} />;
   }
 
-  if (width < 300 && width < 0) {
+  if (width < 300 && width !== 0) {
     return <FacebookSmallOpenGraph {...props} />;
   }
 

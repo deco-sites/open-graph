@@ -25,6 +25,9 @@ export default {
         third: "#2E6ED9",
         common: "#66736C",
       },
+      borderColor: {
+        "light-border": "#D4DBD7",
+      },
 
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],
