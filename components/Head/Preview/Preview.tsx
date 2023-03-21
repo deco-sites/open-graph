@@ -1,11 +1,45 @@
-import { Props } from "../inteface.tsx";
+import { Dimensions, PreviewProps, Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
 import { SlackArticle, SlackWebsite } from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
+import { useSignal } from "@preact/signals";
+import { useRef } from "preact/hooks";
+import Facebook from "./Facebook.tsx";
 
-export default function Preview(props: Props) {
+export default function PreviewHandler(propsOriginais: Props) {
+  const { title, description, url, image, type, themeColor } = propsOriginais;
+  const dimensions = useSignal<Dimensions>({ width: 0, height: 0 });
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const getMeta = async (url: string) => {
+    if (typeof document !== "undefined") {
+      const img = document.createElement("img");
+      img.src = url;
+      await img.decode();
+      return img;
+    }
+  };
+
+  getMeta(image).then((img) => {
+    if (img !== undefined) {
+      dimensions.value = {
+        width: img.width,
+        height: img.naturalHeight,
+      };
+    }
+  });
+
+  return (
+    <>
+      <Preview props={propsOriginais} dimensions={dimensions.value} />
+    </>
+  );
+}
+
+function Preview({ props, dimensions }: PreviewProps) {
   const { title, description, url, image, type, themeColor } = props;
+  const { width, height } = dimensions;
 
   return (
     <section>
@@ -16,8 +50,8 @@ export default function Preview(props: Props) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="Slack">
-          <SlackWebsite {...props} />
+        <PreviewItem title="Facebook">
+          <Facebook {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
