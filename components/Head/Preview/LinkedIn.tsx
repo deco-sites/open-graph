@@ -8,7 +8,7 @@ export default function LinkedIn(props: Props) {
     <div>
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class="w-full h-[210px] sm:h-[273px] w-[400px] sm:w-[552px] object-cover"
         decoding="async"
         loading="lazy"

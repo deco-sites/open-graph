@@ -8,7 +8,7 @@ function TwitterArticle(props: Props) {
     <div class="border overflow-hidden rounded-[16px] border-light-border">
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class="w-full h-[210px] sm:h-[273px] w-[400px] sm:w-[552px] object-cover"
         decoding="async"
         loading="lazy"
@@ -37,7 +37,7 @@ function TwitterWebsite(props: Props) {
     <div class="flex border overflow-hidden rounded-[16px] border-light-border">
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class="object-cover min-w-[150px]"
         decoding="async"
         loading="lazy"

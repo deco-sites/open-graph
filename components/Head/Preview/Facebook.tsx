@@ -7,7 +7,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
     <div>
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class="w-full h-[210px] sm:h-[273px] w-[400px] sm:w-[552px] object-cover"
         decoding="async"
         loading="lazy"
@@ -35,7 +35,7 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
     <div class="flex w-full">
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class=" object-cover"
         decoding="async"
         loading="lazy"
@@ -63,7 +63,7 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
     <div class="flex w-full">
       <Image
         src={image}
-        alt="Grogu"
+        alt={title}
         class=" object-cover"
         decoding="async"
         loading="lazy"
