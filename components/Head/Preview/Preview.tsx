@@ -50,8 +50,8 @@ function Preview({ props, dimensions }: PreviewProps) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="Facebook">
-          <Facebook {...{ ...props, ...dimensions }} />
+        <PreviewItem title="Slack">
+          <SlackWebsite {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
