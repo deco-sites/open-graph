@@ -2,7 +2,7 @@ import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
 
 function TelegramBiggerImage(props: PreviewItens) {
-  const { image, title, description, width, height } = props;
+  const { image, title, description, width, height, path } = props;
 
   return (
     <div class="flex gap-[6px]">
@@ -19,7 +19,7 @@ function TelegramBiggerImage(props: PreviewItens) {
         />
         <div class="py-1 bg-white font-semibold">
           <p class="text-xs text-third leading-[19px]">
-            website.com
+            {path}
           </p>
           <p class="text-sm  text-secondary leading-[19px]">
             {title}
@@ -34,7 +34,7 @@ function TelegramBiggerImage(props: PreviewItens) {
 }
 
 function TelegramSmallerImage(props: PreviewItens) {
-  const { image, title, description, height } = props;
+  const { image, title, description, height, path } = props;
 
   return (
     <div class="flex gap-[6px]">
@@ -52,7 +52,7 @@ function TelegramSmallerImage(props: PreviewItens) {
         />
         <div class="py-1 bg-white font-semibold">
           <p class="text-xs text-third leading-[19px]">
-            website.com
+            {path}
           </p>
           <p class="text-sm  text-secondary leading-[19px]">
             {title}
@@ -67,7 +67,7 @@ function TelegramSmallerImage(props: PreviewItens) {
 }
 
 function Telegram(props: PreviewItens) {
-  const { image, title, description, width, height } = props;
+  const { image, title, description, width, height, path } = props;
 
   if (width === 0) {
     return <div></div>;

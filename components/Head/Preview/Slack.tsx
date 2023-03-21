@@ -2,8 +2,17 @@ import Image from "$live/std/ui/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
 
 function SlackArticle(props: PreviewItens) {
-  const { title, description, url, image, type, themeColor, width, height } =
-    props;
+  const {
+    title,
+    description,
+    url,
+    image,
+    type,
+    themeColor,
+    width,
+    height,
+    path,
+  } = props;
   return (
     <div class="flex text-[15px] ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-lg    overflow-hidden box-border mr-3">
@@ -17,7 +26,7 @@ function SlackArticle(props: PreviewItens) {
             width={16}
             height={16}
           />
-          <h2 class="font-bold">deco.site</h2>
+          <h2 class="font-bold">{path}</h2>
         </div>
         <h3 class="font-bold text-third">{title}</h3>
         <p class="">{description}</p>
@@ -33,8 +42,17 @@ function SlackArticle(props: PreviewItens) {
   );
 }
 function SlackWebsite(props: PreviewItens) {
-  const { title, description, url, image, type, themeColor, width, height } =
-    props;
+  const {
+    title,
+    description,
+    url,
+    image,
+    type,
+    themeColor,
+    width,
+    height,
+    path,
+  } = props;
   return (
     <div class="flex w-[600px]">
       <div class="flex flex-col w-[4px] bg-divider 
@@ -53,7 +71,7 @@ function SlackWebsite(props: PreviewItens) {
             width={16}
             height={16}
           />
-          <h2 class="font-bold">deco.site</h2>
+          <h2 class="font-bold">{path}</h2>
         </div>
         <div class="flex">
           <div class="flex-grow flex flex-col flex-shrink">
@@ -74,8 +92,17 @@ function SlackWebsite(props: PreviewItens) {
 }
 
 export default function Slack(props: PreviewItens) {
-  const { title, description, url, image, type, themeColor, width, height } =
-    props;
+  const {
+    title,
+    description,
+    url,
+    image,
+    type,
+    themeColor,
+    width,
+    height,
+    path,
+  } = props;
 
   if (type === "website") {
     return <SlackWebsite {...props} />;

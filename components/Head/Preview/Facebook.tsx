@@ -1,8 +1,8 @@
 import Image from "$live/std/ui/components/Image.tsx";
-import { PreviewItens, Props } from "../inteface.tsx";
+import { PreviewItens } from "../inteface.tsx";
 
 function FacebookBigOpenGraph(props: PreviewItens) {
-  const { image, title, description } = props;
+  const { image, title, description, path } = props;
   return (
     <div>
       <Image
@@ -16,7 +16,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
       />
       <div class="px-4 py-3 flex flex-col gap-[3px] bg-facebook-bg ">
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
-          website.com
+          {path}
         </p>
         <p class="text-base  font-thin text-secondary leading-[19px]">
           {title}
@@ -30,7 +30,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
 }
 
 function FacebookMediumOpenGraph(props: PreviewItens) {
-  const { image, title, description } = props;
+  const { image, title, description, path } = props;
   return (
     <div class="flex w-full">
       <Image
@@ -44,7 +44,7 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
       />
       <div class="px-4 justify-center flex flex-col gap-[3px] bg-facebook-bg ">
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
-          website.com
+          {path}
         </p>
         <p class="text-base  font-thin  text-secondary leading-[19px]">
           {title}
@@ -58,7 +58,7 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
 }
 
 function FacebookSmallOpenGraph(props: PreviewItens) {
-  const { image, title, description } = props;
+  const { image, title, description, path } = props;
   return (
     <div class="flex w-full">
       <Image
@@ -72,7 +72,7 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
       />
       <div class="px-4 justify-center flex flex-col gap-[3px] bg-facebook-bg ">
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
-          website.com
+          {path}
         </p>
         <p class="text-base  font-thin text-secondary leading-[19px]">
           {title}

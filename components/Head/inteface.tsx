@@ -19,6 +19,7 @@ export interface Props {
 export interface PreviewProps {
   props: Props;
   dimensions: Dimensions;
+  path: string;
 }
 
 export interface PreviewItens {
@@ -30,4 +31,5 @@ export interface PreviewItens {
   themeColor: string;
   width: number;
   height: number;
+  path: string;
 }
