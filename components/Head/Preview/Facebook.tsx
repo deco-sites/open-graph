@@ -18,7 +18,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
           website.com
         </p>
-        <p class="text-base  font-thin font-inter text-secondary leading-[19px]">
+        <p class="text-base  font-thin text-secondary leading-[19px]">
           {title}
         </p>
         <p class="text-sm text-common leading-[19px]">
@@ -31,7 +31,6 @@ function FacebookBigOpenGraph(props: PreviewItens) {
 
 function FacebookMediumOpenGraph(props: PreviewItens) {
   const { image, title, description } = props;
-
   return (
     <div class="flex w-full">
       <Image
@@ -47,7 +46,7 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
           website.com
         </p>
-        <p class="text-base  font-thin font-inter text-secondary leading-[19px]">
+        <p class="text-base  font-thin  text-secondary leading-[19px]">
           {title}
         </p>
         <p class="text-sm text-common leading-[19px]">
@@ -75,7 +74,7 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
         <p class="text-xs uppercase font-normal text-common leading-[15px]">
           website.com
         </p>
-        <p class="text-base  font-thin font-inter text-secondary leading-[19px]">
+        <p class="text-base  font-thin text-secondary leading-[19px]">
           {title}
         </p>
         <p class="text-sm text-common leading-[19px]">

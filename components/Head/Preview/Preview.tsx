@@ -1,5 +1,6 @@
 import { Dimensions, PreviewProps, Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
+import { SlackArticle, SlackWebsite } from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
 import { useSignal } from "@preact/signals";
@@ -49,8 +50,8 @@ function Preview({ props, dimensions }: PreviewProps) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="Facebook">
-          <Facebook {...{ ...props, ...dimensions }} />
+        <PreviewItem title="Slack">
+          <SlackWebsite {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
