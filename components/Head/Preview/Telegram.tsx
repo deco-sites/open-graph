@@ -6,8 +6,20 @@ function TelegramBiggerImage(props: PreviewItens) {
 
   return (
     <div class="flex gap-[6px]">
-      <div class="flex-grow border-1 border-divider-blue max-w-[2px]"></div>
+      <div class="flex-grow border-2 rounded-l-full border-divider-blue">
+      </div>
       <div>
+        <div class="py-1 bg-white font-semibold">
+          <p class="text-xs text-third leading-[19px]">
+            website.com
+          </p>
+          <p class="text-sm  text-secondary leading-[19px]">
+            {title}
+          </p>
+          <p class="font-normal text-secondary text-sm leading-5">
+            {description}
+          </p>
+        </div>
         <Image
           src={image}
           alt={title}
@@ -17,17 +29,6 @@ function TelegramBiggerImage(props: PreviewItens) {
           width={width}
           height={height}
         />
-        <div class="py-1 bg-white font-semibold">
-          <p class="text-xs text-third leading-[19px]">
-            website.com
-          </p>
-          <p class="text-sm  text-secondary leading-[19px]">
-            {title}
-          </p>
-          <p class="font-normal text-sm leading-5">
-            {description}
-          </p>
-        </div>
       </div>
     </div>
   );
@@ -38,19 +39,10 @@ function TelegramSmallerImage(props: PreviewItens) {
 
   return (
     <div class="flex gap-[6px]">
-      <div class="flex-grow border-1 border-divider-blue max-w-[2px]">
+      <div class="flex-grow border-2 rounded-l-full border-divider-blue max-w-[2px]">
       </div>
-      <div>
-        <Image
-          src={image}
-          alt={title}
-          class="rounded-[6px] "
-          decoding="async"
-          loading="lazy"
-          width={454}
-          height={height}
-        />
-        <div class="py-1 bg-white font-semibold">
+      <div class="flex flex-grow max-w-[80%]">
+        <div class="py-1 flex-grow bg-white font-semibold">
           <p class="text-xs text-third leading-[19px]">
             website.com
           </p>
@@ -61,6 +53,15 @@ function TelegramSmallerImage(props: PreviewItens) {
             {description}
           </p>
         </div>
+        <Image
+          src={image}
+          alt={title}
+          class="rounded-[6px] "
+          decoding="async"
+          loading="lazy"
+          width={80}
+          height={80}
+        />
       </div>
     </div>
   );
