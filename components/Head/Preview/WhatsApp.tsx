@@ -2,9 +2,9 @@ import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
 
 function WhatsAppBiggerImages(props: PreviewItens) {
-  const { image, title, description } = props;
+  const { image, title, description, path } = props;
   return (
-    <div class="w-[330px] h-[280px] rounded-lg overflow-hidden box-border ">
+    <div class="w-[330px] rounded-lg overflow-hidden box-border ">
       <Image
         src={image}
         alt={title}
@@ -14,19 +14,19 @@ function WhatsAppBiggerImages(props: PreviewItens) {
         width={200}
         height={200}
       />
-      <div class="text-[15px] bg-secondary p-3 leading-5">
-        <h3 class="text-secondary">Website</h3>
-        <p class="text-common">
-          A page's meta description tag is meant to give the user an idea of the
-          content that exists within the page.
+      <div class="text-[13px] bg-secondary p-3 leading-5">
+        <h3 class="text-secondary">{title}</h3>
+        <p class="text-common text-[12px]">
+          {description}
         </p>
+        <p class="text-[12px] text-common">{path}</p>
       </div>
     </div>
   );
 }
 
 function WhatsAppSmallerImages(props: PreviewItens) {
-  const { image, title, description, width } = props;
+  const { image, title, description, path } = props;
   return (
     <div class="rounded-lg overflow-hidden box-border flex">
       <Image
@@ -38,11 +38,11 @@ function WhatsAppSmallerImages(props: PreviewItens) {
         height={106}
       />
       <div class="text-[15px] flex flex-col px-[12px] justify-center bg-secondary leading-5">
-        <h3 class="text-secondary">Website</h3>
-        <p class="text-common">
-          A page's meta description tag is meant to give the user an idea of the
-          content that exists within the page.
+        <h3 class="text-secondary">{title}</h3>
+        <p class="text-common text-[13px]">
+          {description}
         </p>
+        <p class="text-[13px] text-common">{path}</p>
       </div>
     </div>
   );

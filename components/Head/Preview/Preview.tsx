@@ -26,6 +26,14 @@ export default function PreviewHandler(propsOriginais: Props) {
     }
   };
 
+  const getPath = () => {
+    if (typeof document !== "undefined") {
+      const path = window.location.host;
+      return path;
+    }
+    return "website.com";
+  };
+
   getMeta(image).then((img) => {
     if (img !== undefined) {
       dimensions.value = {
@@ -35,14 +43,20 @@ export default function PreviewHandler(propsOriginais: Props) {
     }
   });
 
+  const pathName = getPath();
+
   return (
     <>
-      <Preview props={propsOriginais} dimensions={dimensions.value} />
+      <Preview
+        props={propsOriginais}
+        dimensions={dimensions.value}
+        path={pathName}
+      />
     </>
   );
 }
 
-function Preview({ props, dimensions }: PreviewProps) {
+function Preview({ props, dimensions, path }: PreviewProps) {
   const { title, description, url, image, type, themeColor } = props;
   const { width, height } = dimensions;
 
@@ -57,28 +71,28 @@ function Preview({ props, dimensions }: PreviewProps) {
       <div class="flex flex-col max-w-[1156px] items-center">
         <div class="flex flex-col items-center gap-[32px] mb-[20px] lg:(grid grid-cols-2 items-start justify-center)">
           <PreviewItem instructions={instructions.google} title="Goggle">
-            <Google {...{ ...props, ...dimensions }} />
+            <Google {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.linkedin} title="Linkedin">
-            <LinkedIn {...{ ...props, ...dimensions }} />
+            <LinkedIn {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.whatsapp} title="Whatsapp">
-            <WhatsApp {...{ ...props, ...dimensions }} />
+            <WhatsApp {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.telegram} title="Telegram">
-            <Telegram {...{ ...props, ...dimensions }} />
+            <Telegram {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.facebook} title="Facebook">
-            <Facebook {...{ ...props, ...dimensions }} />
+            <Facebook {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.twitter} title="Twitter">
-            <Twitter {...{ ...props, ...dimensions }} />
+            <Twitter {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.discord} title="Discord">
-            <Discord {...{ ...props, ...dimensions }} />
+            <Discord {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.slack} title="Slack">
-            <Slack {...{ ...props, ...dimensions }} />
+            <Slack {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
         </div>
       </div>

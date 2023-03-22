@@ -1,8 +1,8 @@
 import Image from "$live/std/ui/components/Image.tsx";
-import { Props } from "../inteface.tsx";
+import { PreviewItens } from "../inteface.tsx";
 
-export default function LinkedIn(props: Props) {
-  const { image, title } = props;
+export default function LinkedIn(props: PreviewItens) {
+  const { image, title, path } = props;
 
   return (
     <div>
@@ -20,7 +20,7 @@ export default function LinkedIn(props: Props) {
           {title}
         </p>
         <p class="text-xs font-normal text-common leading-[19px]">
-          website.com
+          {path}
         </p>
       </div>
     </div>

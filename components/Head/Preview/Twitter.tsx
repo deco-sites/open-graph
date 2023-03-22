@@ -1,8 +1,8 @@
 import Image from "$live/std/ui/components/Image.tsx";
-import { Props } from "../inteface.tsx";
+import { PreviewItens } from "../inteface.tsx";
 
-function TwitterArticle(props: Props) {
-  const { image, title, description } = props;
+function TwitterArticle(props: PreviewItens) {
+  const { image, title, description, path } = props;
 
   return (
     <div class="border overflow-hidden rounded-[16px] border-light-border">
@@ -17,7 +17,7 @@ function TwitterArticle(props: Props) {
       />
       <div class="text-[15px] flex flex-col justify-center gap-[2px] px-4 py-3 bg-white  ">
         <p class="font-normal text-common leading-[19px]">
-          website.com
+          {path}
         </p>
         <p class="font-thin text-secondary leading-[19px]">
           {title}
@@ -30,8 +30,8 @@ function TwitterArticle(props: Props) {
   );
 }
 
-function TwitterWebsite(props: Props) {
-  const { image, title, description } = props;
+function TwitterWebsite(props: PreviewItens) {
+  const { image, title, description, path } = props;
 
   return (
     <div class="flex border overflow-hidden rounded-[16px] border-light-border">
@@ -46,7 +46,7 @@ function TwitterWebsite(props: Props) {
       />
       <div class="text-[15px] px-4 w-full flex flex-col justify-center gap-[2px] py-3 bg-white  ">
         <p class="font-normal text-common leading-[19px]">
-          website.com
+          {path}
         </p>
         <p class="font-thin text-secondary leading-[19px]">
           {title}
@@ -59,8 +59,8 @@ function TwitterWebsite(props: Props) {
   );
 }
 
-function Twitter(props: Props) {
-  const { image, title, description, type } = props;
+function Twitter(props: PreviewItens) {
+  const { image, title, description, type, path } = props;
   if (type === "article") {
     return <TwitterArticle {...props} />;
   }
