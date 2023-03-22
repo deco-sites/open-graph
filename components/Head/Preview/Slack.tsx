@@ -1,7 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
 
-
 export function SlackArticle(props: PreviewItens) {
   const { title, description, url, image, type, themeColor, width, height } =
     props;

@@ -3,7 +3,7 @@ import WhatsApp from "./WhatsApp.tsx";
 import { SlackArticle, SlackWebsite } from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
-import {DiscordWebsite} from "./Discord.tsx";
+import { DiscordWebsite } from "./Discord.tsx";
 import { useSignal } from "@preact/signals";
 import { useRef } from "preact/hooks";
 import Facebook from "./Facebook.tsx";
