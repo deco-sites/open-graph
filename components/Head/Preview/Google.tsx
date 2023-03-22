@@ -9,11 +9,12 @@ export default function Google(props: PreviewItens) {
         {path}
         <span class="text-common ml-[10px] font-semibold">&#8942;</span>
       </p>
-      <p class="text-[20px] font-thin text-third leading-[19px]">
+      <p class="text-[20px] font-thin text-third leading-[19px]  overflow-ellipsis 
+        overflow-hidden max-w-[360px]  whitespace-nowrap">
         {title}
       </p>
       <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] leading-[22px]">
-        {description}
+        {description.length > 130 ? description.slice(0, 130) + "..." : description}
       </p>
     </div>
   );

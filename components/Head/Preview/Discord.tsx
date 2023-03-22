@@ -7,20 +7,23 @@ function DiscordArticle(props: PreviewItens) {
     <div class="flex  w-min">
       <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
       </div>
-      <div class="bg-discord-bg pt-2 pb-4 pl-3 pr-4 rounded-r-md max-w-[428px] ">
-        <h2 class="font-bold leading-[22px] mt-2 text-third whitespace-nowrap">
-          {title}
+      <div class="bg-discord-bg pt-2 pb-4 pl-3 pr-4 rounded-r-md max-w-[488px] w-full">
+        <h2 class="font-bold leading-[22px] mt-2 text-third">
+          {title.length > 50 ? title.slice(0, 50) + "..." : title}
         </h2>
-        <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-          {description}
+        <p class="leading-[1.125rem] mt-2 text-sm text-secondary break-words">
+        {description.length > 300 ? description.slice(0, 300) + "..." : description}
         </p>
-        <Image
-          src={image}
-          alt={title}
-          class="object-contain rounded-lg max-h-[300px] max-w-[400px] min-h-[157px] min-w-[157px] w-min mt-4"
-          width={width}
-          height={height}
-        />
+        <div class="min-w-[400px]">
+          <Image
+            src={image}
+            alt={title}
+            class="object-contain rounded-lg max-h-[300px] max-w-[400px] min-h-[157px] min-w-[157px] w-min mt-4"
+            width={width}
+            height={height}
+          />
+        </div>
+
       </div>
     </div>
   );
@@ -29,22 +32,22 @@ function DiscordArticle(props: PreviewItens) {
 function DiscordWebsite(props: PreviewItens) {
   const { title, description, image, width, height } = props;
   return (
-    <div class="flex  w-min">
+    <div class="flex  ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
       </div>
-      <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md">
-        <div class=" rounded-r-md max-w-[428px] ">
-          <h2 class="font-bold leading-[22px] mt-2 text-third whitespace-nowrap">
-            {title}
+      <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md  ">
+        <div class=" rounded-r-md max-w-[392px] ">
+          <h2 class="font-bold leading-[22px] mt-2 text-third max-w-[392px] w-full">
+            {title.length > 50 ? title.slice(0, 50) + "..." : title}
           </h2>
           <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-            {description}
+            {description.length > 300 ? description.slice(0, 300) + "..." : description}
           </p>
         </div>
         <Image
           src={image}
           alt={title}
-          class="object-contain max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min mt-2 ml-4 rounded-lg"
+          class="max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min  rounded-lg"
           width={width}
           height={height}
         />

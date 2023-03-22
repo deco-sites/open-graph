@@ -15,8 +15,11 @@ function WhatsAppBiggerImages(props: PreviewItens) {
         height={200}
       />
       <div class="text-[13px] bg-secondary p-3 leading-5">
-        <h3 class="text-secondary">{title}</h3>
-        <p class="text-common text-[12px]">
+        <h3 class="text-secondary">
+        {title.length > 105 ? title.slice(0, 105) + "..." : title}
+        </h3>
+        <p class="text-common text-[12px] overflow-ellipsis 
+        overflow-hidden max-w-full  whitespace-nowrap">
           {description}
         </p>
         <p class="text-[12px] text-common">{path}</p>
@@ -37,10 +40,11 @@ function WhatsAppSmallerImages(props: PreviewItens) {
         width={106}
         height={106}
       />
-      <div class="text-[15px] flex flex-col px-[12px] justify-center bg-secondary leading-5">
-        <h3 class="text-secondary">{title}</h3>
-        <p class="text-common text-[13px]">
-          {description}
+      <div class="text-[15px] flex flex-col px-[12px] justify-center bg-secondary rounded-r-lg  leading-5">
+        <h3 class="text-secondary">{title.length > 100 ? title.slice(0, 100) + "..." : title}</h3>
+        <p class="text-common text-[13px] overflow-ellipsis 
+        overflow-hidden max-w-[360px]  whitespace-nowrap">
+        {description}
         </p>
         <p class="text-[13px] text-common">{path}</p>
       </div>
