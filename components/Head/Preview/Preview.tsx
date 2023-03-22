@@ -2,6 +2,7 @@ import { Dimensions, PreviewProps, Props } from "../inteface.tsx";
 import WhatsApp from "./WhatsApp.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
+import Discord from "./Discord.tsx";
 import { useSignal } from "@preact/signals";
 import { useRef } from "preact/hooks";
 import Facebook from "./Facebook.tsx";
@@ -72,6 +73,9 @@ function Preview({ props, dimensions }: PreviewProps) {
           </PreviewItem>
           <PreviewItem instructions={instructions.twitter} title="Twitter">
             <Twitter {...{ ...props, ...dimensions }} />
+          </PreviewItem>
+          <PreviewItem instructions={instructions.discord} title="Discord">
+            <Discord {...{ ...props, ...dimensions }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.slack} title="Slack">
             <Slack {...{ ...props, ...dimensions }} />

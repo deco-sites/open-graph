@@ -5,7 +5,7 @@ function SlackArticle(props: PreviewItens) {
   const { title, description, url, image, type, themeColor, width, height } =
     props;
   return (
-    <div class="flex text-[15px] ">
+    <div class="flex text-[15px] max-w-[522px] ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-lg    overflow-hidden box-border mr-3">
       </div>
       <div class="flex flex-col w-[363px] leading-[22px] gap-[4px]">
@@ -36,7 +36,7 @@ function SlackWebsite(props: PreviewItens) {
   const { title, description, url, image, type, themeColor, width, height } =
     props;
   return (
-    <div class="flex w-[600px]">
+    <div class="flex w-[600px] max-w-[522px]">
       <div class="flex flex-col w-[4px] bg-divider 
             rounded-lg    
             overflow-hidden
