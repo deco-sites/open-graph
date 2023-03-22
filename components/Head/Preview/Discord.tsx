@@ -1,7 +1,7 @@
 import type { PreviewItens } from "../inteface.tsx";
 import Image from "$live/std/ui/components/Image.tsx";
 
-export function DiscordArticle(props: PreviewItens) {
+function DiscordArticle(props: PreviewItens) {
   const { title, description, image, width, height } = props;
   return (
     <div class="flex  w-min">
@@ -26,13 +26,13 @@ export function DiscordArticle(props: PreviewItens) {
   );
 }
 
-export function DiscordWebsite(props: PreviewItens) {
+function DiscordWebsite(props: PreviewItens) {
   const { title, description, image, width, height } = props;
   return (
     <div class="flex  w-min">
       <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
       </div>
-      <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 ">
+      <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md">
         <div class=" rounded-r-md max-w-[428px] ">
           <h2 class="font-bold leading-[22px] mt-2 text-third whitespace-nowrap">
             {title}
@@ -52,3 +52,21 @@ export function DiscordWebsite(props: PreviewItens) {
     </div>
   );
 }
+
+
+
+export default function Discord(props: PreviewItens) {
+    const { title, description, url, image, type, themeColor, width, height } =
+      props;
+  
+    if (type === "website") {
+      return <DiscordWebsite {...props} />;
+    }
+  
+    if (type === "article") {
+      return <DiscordArticle {...props} />;
+    }
+  
+    return <div></div>;
+  }
+  

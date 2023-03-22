@@ -1,0 +1,35 @@
+{
+  "google": [
+    "The image does not affect this preview.",
+    "The visualization mode does not affect this preview."
+  ],
+  "linkedin": [
+    "The image size does not affect this preview.",
+    "The visualization mode does not affect this preview."
+  ],
+  "whatsapp": [
+    "The preview will be a “horizontal list” if your image's width or height is less than 300 px.",
+    "The visualization mode does not affect this preview."
+  ],
+  "telegram": [
+    "The preview will keep image's aspect ratio if it's bigger than 300 px.",
+    "The preview will show a squared image if it's width or height is less than 300 px."
+  ],
+  "facebook": [
+    "The preview will be a card if your image's width is bigger than 600 px.",
+    "The preview will be a “horizontal list” if your image's width is between 300 px and 600 px, the image's aspect ratio will be keep.",
+    "The preview will be a “horizontal list” with a squared image if it's width or height is less than 300 px.",
+    "The visualization mode does not affect this preview."
+  ],
+  "twitter": [
+    "The image size does not affect this preview."
+  ],
+  "slack": [
+    "The preview will keep image's aspect ratio if it's bigger than 300 px.",
+    "The preview will show a squared image if it's width or height is less than 300 px."
+  ],
+  "discord": [
+    "The preview will keep image's aspect ratio if it's bigger than 300 px.",
+    "The preview will show a squared image if it's width or height is less than 300 px."
+  ]
+}

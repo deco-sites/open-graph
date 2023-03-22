@@ -5,7 +5,7 @@ export default {
       screens: {
         sm: "640px",
         md: "768px",
-        lg: "1024px",
+        lg: "1120px",
         xl: "1280px",
         "2xl": "1536px",
       },
@@ -14,6 +14,7 @@ export default {
         "primary-dark": "#003232",
         "primary-light": "#C5FFE9",
         secondary: "#F5F6F6",
+        "divider-blue": "#2E6ED9",
         divider: "#D4DBD7",
         transparent: "transparent",
         "linkedin-bg": "#EFF3F8",

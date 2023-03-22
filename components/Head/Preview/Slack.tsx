@@ -1,18 +1,18 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
 
-export function SlackArticle(props: PreviewItens) {
+function SlackArticle(props: PreviewItens) {
   const { title, description, url, image, type, themeColor, width, height } =
     props;
   return (
-    <div class="flex text-[15px] ">
+    <div class="flex text-[15px] max-w-[522px] ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-lg    overflow-hidden box-border mr-3">
       </div>
       <div class="flex flex-col w-[363px] leading-[22px] gap-[4px]">
         <div class="flex">
           <Image
             src="https://github.com/deco-sites/start/blob/main/static/favicon-32x32.png?raw=true"
-            alt="Grogu"
+            alt={title}
             class="object-contain mr-2"
             width={16}
             height={16}
@@ -23,7 +23,7 @@ export function SlackArticle(props: PreviewItens) {
         <p class="">{description}</p>
         <Image
           src={image}
-          alt="Grogu"
+          alt={title}
           class="object-contain rounded-lg max-h-[300px] max-w-[300px] min-h-[157px] min-w-[157px] w-min"
           width={width}
           height={height}
@@ -32,11 +32,11 @@ export function SlackArticle(props: PreviewItens) {
     </div>
   );
 }
-export function SlackWebsite(props: PreviewItens) {
+function SlackWebsite(props: PreviewItens) {
   const { title, description, url, image, type, themeColor, width, height } =
     props;
   return (
-    <div class="flex w-[600px]">
+    <div class="flex w-[600px] max-w-[522px]">
       <div class="flex flex-col w-[4px] bg-divider 
             rounded-lg    
             overflow-hidden
@@ -48,7 +48,7 @@ export function SlackWebsite(props: PreviewItens) {
         <div class="flex">
           <Image
             src="https://github.com/deco-sites/start/blob/main/static/favicon-32x32.png?raw=true"
-            alt="Grogu"
+            alt={title}
             class=" object-contain mr-2 "
             width={16}
             height={16}
@@ -62,7 +62,7 @@ export function SlackWebsite(props: PreviewItens) {
           </div>
           <Image
             src={image}
-            alt=""
+            alt={title}
             class="max-h-[80px] max-w-[80px] min-h-[42px] min-w-[42px] w-min object-contain  mt-[5px] rounded-lg"
             width={width}
             height={height}
@@ -71,4 +71,19 @@ export function SlackWebsite(props: PreviewItens) {
       </div>
     </div>
   );
+}
+
+export default function Slack(props: PreviewItens) {
+  const { title, description, url, image, type, themeColor, width, height } =
+    props;
+
+  if (type === "website") {
+    return <SlackWebsite {...props} />;
+  }
+
+  if (type === "article") {
+    return <SlackArticle {...props} />;
+  }
+
+  return <div></div>;
 }
