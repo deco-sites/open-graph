@@ -6,17 +6,17 @@ function TelegramBiggerImage(props: PreviewItens) {
 
   return (
     <div class="flex gap-[6px]">
-      <div class="flex-grow border-2 rounded-l-full border-divider-blue">
+      <div class="border-2 rounded-l-full border-divider-blue">
       </div>
       <div>
         <div class="py-1 bg-white font-semibold">
           <p class="text-xs text-third leading-[19px]">
-            website.com
+            {path}
           </p>
           <p class="text-sm  text-secondary leading-[19px]">
             {title}
           </p>
-          <p class="font-normal text-secondary text-sm leading-5">
+          <p class="font-normal text-sm leading-5">
             {description}
           </p>
         </div>
@@ -29,17 +29,6 @@ function TelegramBiggerImage(props: PreviewItens) {
           width={width}
           height={height}
         />
-        <div class="py-1 bg-white font-semibold">
-          <p class="text-xs text-third leading-[19px]">
-            {path}
-          </p>
-          <p class="text-sm  text-secondary leading-[19px]">
-            {title}
-          </p>
-          <p class="font-normal text-sm leading-5">
-            {description}
-          </p>
-        </div>
       </div>
     </div>
   );
