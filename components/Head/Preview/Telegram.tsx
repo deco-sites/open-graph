@@ -17,7 +17,9 @@ function TelegramBiggerImage(props: PreviewItens) {
             {title}
           </p>
           <p class="font-normal text-sm leading-5">
-            {description.length > 220 ? description.slice(0, 220) + "..." : description}
+            {description.length > 220
+              ? description.slice(0, 220) + "..."
+              : description}
           </p>
         </div>
         <Image
@@ -43,15 +45,15 @@ function TelegramSmallerImage(props: PreviewItens) {
       </div>
       <div class="flex flex-grow max-w-[480px] ">
         <div class="py-1 flex-grow bg-white font-semibold">
-        <Image
-          src={image}
-          alt={title}
-          class="rounded-[6px] float-right max-h-[55px] ml-1"
-          decoding="async"
-          loading="lazy"
-          width={55}
-          height={55}
-        />
+          <Image
+            src={image}
+            alt={title}
+            class="rounded-[6px] float-right max-h-[55px] ml-1"
+            decoding="async"
+            loading="lazy"
+            width={55}
+            height={55}
+          />
           <p class="text-xs text-third leading-[19px]">
             {path}
           </p>
@@ -59,12 +61,11 @@ function TelegramSmallerImage(props: PreviewItens) {
             {title.length > 160 ? title.slice(0, 160) + "..." : title}
           </p>
           <p class="font-normal text-sm leading-5 break-words">
-               {title.length < 100 && (description.length > 160 ? description.slice(0, 160) + "..." : description)}
-
+            {title.length < 100 && (description.length > 160
+              ? description.slice(0, 160) + "..."
+              : description)}
           </p>
-          
         </div>
-        
       </div>
     </div>
   );

@@ -14,7 +14,9 @@ export default function Google(props: PreviewItens) {
         {title}
       </p>
       <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] leading-[22px]">
-        {description.length > 130 ? description.slice(0, 130) + "..." : description}
+        {description.length > 130
+          ? description.slice(0, 130) + "..."
+          : description}
       </p>
     </div>
   );

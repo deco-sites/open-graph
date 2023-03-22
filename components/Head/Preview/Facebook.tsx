@@ -53,7 +53,9 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
           {title.length > 90 ? title.slice(0, 90) + "..." : title}
         </p>
         <p class="text-sm text-common leading-[19px] max-w-[360px] break-words ">
-          {description.length > 110 ? description.slice(0, 110) + "..." : description}
+          {description.length > 110
+            ? description.slice(0, 110) + "..."
+            : description}
         </p>
       </div>
     </div>
@@ -82,7 +84,9 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
         </p>
         <p class=" text-sm text-common leading-[19px] max-w-[380px] break-words
         ">
-          {description.length > 80 ? description.slice(0, 80) + "..." : description}
+          {description.length > 80
+            ? description.slice(0, 80) + "..."
+            : description}
         </p>
       </div>
     </div>
@@ -102,8 +106,6 @@ function Facebook(props: PreviewItens) {
   if (height <= 600 && height >= 300 || height > width) {
     return <FacebookMediumOpenGraph {...props} />;
   }
-
-
 
   return <div></div>;
 }

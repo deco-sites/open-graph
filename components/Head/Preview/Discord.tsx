@@ -12,7 +12,9 @@ function DiscordArticle(props: PreviewItens) {
           {title.length > 50 ? title.slice(0, 50) + "..." : title}
         </h2>
         <p class="leading-[1.125rem] mt-2 text-sm text-secondary break-words">
-        {description.length > 300 ? description.slice(0, 300) + "..." : description}
+          {description.length > 300
+            ? description.slice(0, 300) + "..."
+            : description}
         </p>
         <div class="min-w-[400px]">
           <Image
@@ -23,7 +25,6 @@ function DiscordArticle(props: PreviewItens) {
             height={height}
           />
         </div>
-
       </div>
     </div>
   );
@@ -41,7 +42,9 @@ function DiscordWebsite(props: PreviewItens) {
             {title.length > 50 ? title.slice(0, 50) + "..." : title}
           </h2>
           <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-            {description.length > 300 ? description.slice(0, 300) + "..." : description}
+            {description.length > 300
+              ? description.slice(0, 300) + "..."
+              : description}
           </p>
         </div>
         <Image
