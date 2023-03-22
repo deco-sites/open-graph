@@ -3,6 +3,7 @@ import WhatsApp from "./WhatsApp.tsx";
 import { SlackArticle, SlackWebsite } from "./Slack.tsx";
 import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
+import {DiscordWebsite} from "./Discord.tsx";
 import { useSignal } from "@preact/signals";
 import { useRef } from "preact/hooks";
 import Facebook from "./Facebook.tsx";
@@ -50,8 +51,8 @@ function Preview({ props, dimensions }: PreviewProps) {
         </p>
       </header>
       <div class="pl-10">
-        <PreviewItem title="Slack">
-          <SlackWebsite {...{ ...props, ...dimensions }} />
+        <PreviewItem title="Discord">
+          <DiscordWebsite {...{ ...props, ...dimensions }} />
         </PreviewItem>
       </div>
     </section>
