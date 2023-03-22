@@ -19,11 +19,14 @@ function TwitterArticle(props: PreviewItens) {
         <p class="font-normal text-common leading-[19px]">
           {path}
         </p>
-        <p class="font-thin text-secondary leading-[19px]">
+        <p class="font-thin text-secondary leading-[19px] overflow-ellipsis 
+        overflow-hidden max-w-full  whitespace-nowrap">
           {title}
         </p>
-        <p class="text-common leading-[20px]">
-          {description}
+        <p class="text-common leading-[20px] ">
+          {description.length > 150
+            ? description.slice(0, 150) + "..."
+            : description}
         </p>
       </div>
     </div>
@@ -44,15 +47,18 @@ function TwitterWebsite(props: PreviewItens) {
         width={150}
         height={150}
       />
-      <div class="text-[15px] px-4 w-full flex flex-col justify-center gap-[2px] py-3 bg-white  ">
+      <div class="text-[15px] flex flex-col justify-center gap-[2px] px-4 py-3 bg-white  ">
         <p class="font-normal text-common leading-[19px]">
           {path}
         </p>
-        <p class="font-thin text-secondary leading-[19px]">
+        <p class="font-thin text-secondary leading-[19px] overflow-ellipsis 
+        overflow-hidden max-w-[300px]  whitespace-nowrap">
           {title}
         </p>
-        <p class="text-common leading-[20px]">
-          {description}
+        <p class="text-common leading-[20px] ">
+          {description.length > 100
+            ? description.slice(0, 100) + "..."
+            : description}
         </p>
       </div>
     </div>
