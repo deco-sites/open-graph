@@ -19,6 +19,7 @@ export default {
         transparent: "transparent",
         "linkedin-bg": "#EFF3F8",
         "facebook-bg": "#F0F2F5",
+        "discord-bg": "#EEEFF1",
       },
       textColor: {
         primary: "#2F3031",
