@@ -80,7 +80,6 @@ function Preview({ props, dimensions }: PreviewProps) {
           <PreviewItem instructions={instructions.slack} title="Slack">
             <Slack {...{ ...props, ...dimensions }} />
           </PreviewItem>
-       
         </div>
       </div>
     </section>
