@@ -1,20 +1,19 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function SlackArticle(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
-    themeColor,
     width,
     height,
     path,
   } = props;
   return (
-    <div class="flex text-[15px] max-w-[522px] ">
+    <div class="flex text-[15px] flex-grow max-w-[522px] ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-lg    overflow-hidden box-border mr-3">
       </div>
       <div class="flex flex-col w-[363px] leading-[22px] gap-[4px]">
@@ -28,15 +27,23 @@ function SlackArticle(props: PreviewItens) {
           />
           <h2 class="font-bold">{path}</h2>
         </div>
-        <h3 class="font-bold text-third">{title}</h3>
-        <p class="">{description}</p>
-        <Image
-          src={image}
-          alt={title}
-          class="object-contain rounded-lg max-h-[300px] max-w-[300px] min-h-[157px] min-w-[157px] w-min"
-          width={width}
-          height={height}
-        />
+        <div class="flex flex-grow flex-col gap-[4px] sm:max-h-[600px] mr-2 sm:flex-wrap">
+          <div>
+            <h3 class="font-bold text-third  overflow-ellipsis">
+              {title}
+            </h3>
+            <p class="max-h-[250px] overflow-ellipsis">
+              {textShortner(description, 1248 - title.length)}
+            </p>
+          </div>
+          <Image
+            src={image}
+            alt={title}
+            class="rounded-lg flex-[100px] min-h-[100px] min-w-[100px] w-min"
+            width={width}
+            height={height}
+          />
+        </div>
       </div>
     </div>
   );
@@ -45,19 +52,16 @@ function SlackWebsite(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
-    themeColor,
     width,
     height,
     path,
   } = props;
   return (
-    <div class="flex w-[600px] max-w-[522px]">
-      <div class="flex flex-col w-[4px] bg-divider 
+    <div class="flex  w-[522px] sm:w-[522px]">
+      <div class="min-w-[4px] w-[4px] bg-divider 
             rounded-lg    
-            overflow-hidden
             box-border 
             ">
       </div>
@@ -74,7 +78,7 @@ function SlackWebsite(props: PreviewItens) {
           <h2 class="font-bold">{path}</h2>
         </div>
         <div class="flex">
-          <div class="flex-grow flex flex-col flex-shrink">
+          <div class="flex-grow flex flex-col max-w-[310px] sm:max-w-[450px] flex-shrink">
             <h3 class="font-bold text-third">{title}</h3>
             <p class="">{description}</p>
           </div>
@@ -95,7 +99,6 @@ export default function Slack(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
     themeColor,

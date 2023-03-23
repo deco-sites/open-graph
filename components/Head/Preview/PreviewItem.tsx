@@ -11,7 +11,7 @@ export default function PreviewItem(
   { title, children, instructions }: PreviewItemProps,
 ) {
   return (
-    <div class="w-[400px] flex flex-col gap-[16px] sm:w-[522px]">
+    <div class="w-[400px] flex flex-col h-full gap-[16px] sm:w-[522px]">
       <Title>{title}</Title>
       <div class="text-[13px] text-primary leading-[20px]">
         <p>Instructions:</p>

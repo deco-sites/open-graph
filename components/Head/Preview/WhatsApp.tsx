@@ -1,5 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function WhatsAppBiggerImages(props: PreviewItens) {
   const { image, title, description, path } = props;
@@ -16,7 +17,7 @@ function WhatsAppBiggerImages(props: PreviewItens) {
       />
       <div class="text-[13px] bg-secondary p-3 leading-5">
         <h3 class="text-secondary">
-          {title.length > 105 ? title.slice(0, 105) + "..." : title}
+          {textShortner(title, 105)}
         </h3>
         <p class="text-common text-[12px] overflow-ellipsis 
         overflow-hidden max-w-full  whitespace-nowrap">
@@ -42,7 +43,7 @@ function WhatsAppSmallerImages(props: PreviewItens) {
       />
       <div class="text-[15px] flex flex-col px-[12px] justify-center bg-secondary rounded-r-lg  leading-5">
         <h3 class="text-secondary">
-          {title.length > 100 ? title.slice(0, 100) + "..." : title}
+          {textShortner(title, 100)}
         </h3>
         <p class="text-common text-[13px] overflow-ellipsis 
         overflow-hidden max-w-[360px]  whitespace-nowrap">

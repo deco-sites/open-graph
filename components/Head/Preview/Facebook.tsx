@@ -1,5 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function FacebookBigOpenGraph(props: PreviewItens) {
   const { image, title, description, path, width, height } = props;
@@ -20,7 +21,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
         </p>
 
         <p class="text-base  font-thin text-secondary leading-[19px]  ">
-          {title.length > 120 ? title.slice(0, 120) + "..." : title}
+          {textShortner(title, 120)}
         </p>
         <p class="text-sm text-common leading-[19px] overflow-ellipsis 
         overflow-hidden max-w-full  whitespace-nowrap
@@ -50,12 +51,10 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
           {path}
         </p>
         <p class="text-base  font-thin  text-secondary leading-[19px]">
-          {title.length > 90 ? title.slice(0, 90) + "..." : title}
+          {textShortner(title, 90)}
         </p>
         <p class="text-sm text-common leading-[19px] max-w-[360px] break-words ">
-          {description.length > 110
-            ? description.slice(0, 110) + "..."
-            : description}
+          {textShortner(description, 110)}
         </p>
       </div>
     </div>
@@ -80,13 +79,11 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
           {path}
         </p>
         <p class="text-base  font-thin text-secondary leading-[19px]">
-          {title.length > 90 ? title.slice(0, 90) + "..." : title}
+          {textShortner(title, 90)}
         </p>
         <p class=" text-sm text-common leading-[19px] max-w-[380px] break-words
         ">
-          {description.length > 80
-            ? description.slice(0, 80) + "..."
-            : description}
+          {textShortner(description, 80)}
         </p>
       </div>
     </div>

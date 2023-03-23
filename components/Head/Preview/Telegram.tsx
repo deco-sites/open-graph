@@ -1,5 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function TelegramBiggerImage(props: PreviewItens) {
   const { image, title, description, width, height, path } = props;
@@ -13,13 +14,11 @@ function TelegramBiggerImage(props: PreviewItens) {
           <p class="text-xs text-third leading-[19px]">
             {path}
           </p>
-          <p class="text-sm  text-secondary leading-[19px]">
-            {title}
+          <p class="text-sm  text-secondary leading-[19px] break-words">
+            {textShortner(title, 160)}
           </p>
-          <p class="font-normal text-sm leading-5">
-            {description.length > 220
-              ? description.slice(0, 220) + "..."
-              : description}
+          <p class="font-normal text-sm leading-5 break-words max-w-[440px]">
+            {title.length < 100 && textShortner(description, 160)}
           </p>
         </div>
         <Image
@@ -58,12 +57,10 @@ function TelegramSmallerImage(props: PreviewItens) {
             {path}
           </p>
           <p class="text-sm  text-secondary leading-[19px]">
-            {title.length > 160 ? title.slice(0, 160) + "..." : title}
+            {textShortner(title, 160)}
           </p>
-          <p class="font-normal text-sm leading-5 break-words">
-            {title.length < 100 && (description.length > 160
-              ? description.slice(0, 160) + "..."
-              : description)}
+          <p class="font-normal text-sm leading-5 break-words max-w-[400px]">
+            {title.length < 100 && textShortner(description, 160)}
           </p>
         </div>
       </div>

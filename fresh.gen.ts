@@ -36,10 +36,6 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Description",
           },
-          "url": {
-            "type": "string",
-            "title": "Url",
-          },
           "image": {
             "format": "image-uri",
             "type": "string",
@@ -67,7 +63,6 @@ const manifest: DecoManifest = {
         "required": [
           "title",
           "description",
-          "url",
           "image",
           "type",
           "themeColor",
