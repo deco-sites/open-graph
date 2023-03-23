@@ -2,10 +2,17 @@ import type { PreviewItens } from "../inteface.tsx";
 import Image from "$live/std/ui/components/Image.tsx";
 
 function DiscordArticle(props: PreviewItens) {
-  const { title, description, image, width, height } = props;
+  const { title, description, image, width, height, themeColor = "#000000" } =
+    props;
+  const regex = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
+
   return (
     <div class="flex  w-min">
-      <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
+      <div
+        class={`flex flex-col w-[4px]  bg-[${
+          regex.test(themeColor) ? themeColor : "#D4DBD7"
+        }] rounded-l-lg    overflow-hidden box-border `}
+      >
       </div>
       <div class="bg-discord-bg pt-2 pb-4 pl-3 pr-4 rounded-r-md max-w-[488px] w-full">
         <h2 class="font-bold leading-[22px] mt-2 text-third">
@@ -50,7 +57,7 @@ function DiscordWebsite(props: PreviewItens) {
         <Image
           src={image}
           alt={title}
-          class="max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min  rounded-lg"
+          class="max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min ml-2 rounded-lg"
           width={width}
           height={height}
         />
