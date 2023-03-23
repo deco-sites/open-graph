@@ -24,7 +24,6 @@ export interface PreviewProps {
 export interface PreviewItens {
   title: string;
   description: string;
-  url: string;
   image: LiveImage;
   type: OGType;
   themeColor: string;

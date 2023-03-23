@@ -13,7 +13,7 @@ import Slack from "./Slack.tsx";
 import instructions from "./instructions.json" assert { type: "json" };
 
 export default function PreviewHandler(propsOriginais: Props) {
-  const { title, description, url, image, type, themeColor } = propsOriginais;
+  const { title, description, image, type, themeColor } = propsOriginais;
   const dimensions = useSignal<Dimensions>({ width: 0, height: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -57,7 +57,7 @@ export default function PreviewHandler(propsOriginais: Props) {
 }
 
 function Preview({ props, dimensions, path }: PreviewProps) {
-  const { title, description, url, image, type, themeColor } = props;
+  const { title, description, image, type, themeColor } = props;
   const { width, height } = dimensions;
 
   return (
