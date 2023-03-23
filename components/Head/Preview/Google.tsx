@@ -10,10 +10,10 @@ export default function Google(props: PreviewItens) {
         <span class="text-common ml-[10px] font-semibold">&#8942;</span>
       </p>
       <p class="text-[20px] font-thin text-third leading-[19px]  overflow-ellipsis 
-        overflow-hidden max-w-[360px]  whitespace-nowrap">
+        overflow-hidden max-w-[360px]  whitespace-nowrap break-words">
         {title}
       </p>
-      <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] leading-[22px]">
+      <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] break-words leading-[22px]">
         {description.length > 130
           ? description.slice(0, 130) + "..."
           : description}
