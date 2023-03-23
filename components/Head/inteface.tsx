@@ -10,7 +10,6 @@ export interface Dimensions {
 export interface Props {
   title: string;
   description: string;
-  url: string;
   image: LiveImage;
   type: OGType;
   themeColor: string;

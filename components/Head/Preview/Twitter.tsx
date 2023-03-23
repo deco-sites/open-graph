@@ -1,5 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function TwitterArticle(props: PreviewItens) {
   const { image, title, description, path } = props;
@@ -24,9 +25,7 @@ function TwitterArticle(props: PreviewItens) {
           {title}
         </p>
         <p class="text-common leading-[20px] ">
-          {description.length > 150
-            ? description.slice(0, 150) + "..."
-            : description}
+          {textShortner(description, 150)}
         </p>
       </div>
     </div>
@@ -56,9 +55,7 @@ function TwitterWebsite(props: PreviewItens) {
           {title}
         </p>
         <p class="text-common leading-[20px] ">
-          {description.length > 100
-            ? description.slice(0, 100) + "..."
-            : description}
+          {textShortner(description, 100)}
         </p>
       </div>
     </div>

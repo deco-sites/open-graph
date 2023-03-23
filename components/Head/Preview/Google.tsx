@@ -1,4 +1,5 @@
 import { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 export default function Google(props: PreviewItens) {
   const { title, description, path } = props;
@@ -14,9 +15,7 @@ export default function Google(props: PreviewItens) {
         {title}
       </p>
       <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] break-words leading-[22px]">
-        {description.length > 130
-          ? description.slice(0, 130) + "..."
-          : description}
+        {textShortner(description, 130)}
       </p>
     </div>
   );

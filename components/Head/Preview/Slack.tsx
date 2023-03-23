@@ -1,14 +1,13 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
+import { textShortner } from "./helpers/textShortner.tsx";
 
 function SlackArticle(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
-    themeColor,
     width,
     height,
     path,
@@ -34,9 +33,7 @@ function SlackArticle(props: PreviewItens) {
               {title}
             </h3>
             <p class="max-h-[250px] overflow-ellipsis">
-              {description.length > 300
-                ? description.slice(0, 300) + "..."
-                : description}
+              {textShortner(description, 1248 - title.length)}
             </p>
           </div>
           <Image
@@ -55,10 +52,8 @@ function SlackWebsite(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
-    themeColor,
     width,
     height,
     path,
@@ -104,7 +99,6 @@ export default function Slack(props: PreviewItens) {
   const {
     title,
     description,
-    url,
     image,
     type,
     themeColor,
