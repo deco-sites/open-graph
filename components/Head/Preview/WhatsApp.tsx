@@ -4,6 +4,8 @@ import { textShortner } from "./helpers/textShortner.tsx";
 
 function WhatsAppBiggerImages(props: PreviewItens) {
   const { image, title, description, path } = props;
+  const titleMaxLength = 105;
+
   return (
     <div class="w-[330px] rounded-lg overflow-hidden box-border ">
       <Image
@@ -17,7 +19,7 @@ function WhatsAppBiggerImages(props: PreviewItens) {
       />
       <div class="text-[13px] bg-secondary p-3 leading-5">
         <h3 class="text-secondary">
-          {textShortner(title, 105)}
+          {textShortner(title, titleMaxLength)}
         </h3>
         <p class="text-common text-[12px] overflow-ellipsis 
         overflow-hidden max-w-full  whitespace-nowrap">
@@ -31,6 +33,8 @@ function WhatsAppBiggerImages(props: PreviewItens) {
 
 function WhatsAppSmallerImages(props: PreviewItens) {
   const { image, title, description, path } = props;
+  const titleMaxLength = 100;
+
   return (
     <div class="rounded-lg overflow-hidden box-border flex">
       <Image
@@ -43,7 +47,7 @@ function WhatsAppSmallerImages(props: PreviewItens) {
       />
       <div class="text-[15px] flex flex-col px-[12px] justify-center bg-secondary rounded-r-lg  leading-5">
         <h3 class="text-secondary">
-          {textShortner(title, 100)}
+          {textShortner(title, titleMaxLength)}
         </h3>
         <p class="text-common text-[13px] overflow-ellipsis 
         overflow-hidden max-w-[360px]  whitespace-nowrap">

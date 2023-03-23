@@ -40,6 +40,7 @@ const manifest: DecoManifest = {
             "format": "image-uri",
             "type": "string",
             "title": "Image",
+            "description": "Recommended: 1200 x 630 px (up to 5MB)",
           },
           "type": {
             "type": "string",
@@ -58,6 +59,8 @@ const manifest: DecoManifest = {
           "themeColor": {
             "type": "string",
             "title": "Theme Color",
+            "description":
+              "Suggested color that browsers should use to customize the display of the page or of the surrounding user interface",
           },
         },
         "required": [

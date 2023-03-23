@@ -3,6 +3,7 @@ import { textShortner } from "./helpers/textShortner.tsx";
 
 export default function Google(props: PreviewItens) {
   const { title, description, path } = props;
+  const descriptionMaxLength = 130;
 
   return (
     <div class="p-[24px] flex flex-col gap-[4px] bg-white border border-light-border rounded-[8px]">
@@ -15,7 +16,7 @@ export default function Google(props: PreviewItens) {
         {title}
       </p>
       <p class="text-xs font-normal text-common leading-[19px] max-w-[352px] break-words leading-[22px]">
-        {textShortner(description, 130)}
+        {textShortner(description, descriptionMaxLength)}
       </p>
     </div>
   );

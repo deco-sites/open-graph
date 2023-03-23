@@ -10,8 +10,14 @@ export interface Dimensions {
 export interface Props {
   title: string;
   description: string;
+  /**
+   * @description Recommended: 1200 x 630 px (up to 5MB)
+   */
   image: LiveImage;
   type: OGType;
+  /**
+   * @description Suggested color that browsers should use to customize the display of the page or of the surrounding user interface
+   */
   themeColor: string;
 }
 

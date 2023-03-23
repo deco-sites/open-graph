@@ -4,6 +4,7 @@ import { textShortner } from "./helpers/textShortner.tsx";
 
 function TwitterArticle(props: PreviewItens) {
   const { image, title, description, path } = props;
+  const descriptionMaxLength = 150;
 
   return (
     <div class="border overflow-hidden rounded-[16px] border-light-border">
@@ -25,7 +26,7 @@ function TwitterArticle(props: PreviewItens) {
           {title}
         </p>
         <p class="text-common leading-[20px] ">
-          {textShortner(description, 150)}
+          {textShortner(description, descriptionMaxLength)}
         </p>
       </div>
     </div>
@@ -34,7 +35,7 @@ function TwitterArticle(props: PreviewItens) {
 
 function TwitterWebsite(props: PreviewItens) {
   const { image, title, description, path } = props;
-
+  const descriptionMaxLength = 100;
   return (
     <div class="flex border overflow-hidden rounded-[16px] border-light-border">
       <Image
@@ -55,7 +56,7 @@ function TwitterWebsite(props: PreviewItens) {
           {title}
         </p>
         <p class="text-common leading-[20px] ">
-          {textShortner(description, 100)}
+          {textShortner(description, descriptionMaxLength)}
         </p>
       </div>
     </div>
