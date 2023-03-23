@@ -6,7 +6,7 @@ function TelegramBiggerImage(props: PreviewItens) {
   const { image, title, description, width, height, path } = props;
 
   return (
-    <div class="flex gap-[6px]">
+    <div class="flex gap-[6px] w-[400px] sm:w-[552px]">
       <div class="border-2 rounded-l-full border-divider-blue">
       </div>
       <div>
@@ -17,7 +17,7 @@ function TelegramBiggerImage(props: PreviewItens) {
           <p class="text-sm  text-secondary leading-[19px] break-words">
             {textShortner(title, 160)}
           </p>
-          <p class="font-normal text-sm leading-5 break-words max-w-[440px]">
+          <p class="font-normal text-sm leading-5 break-words max-w-[380px] sm:max-w-[440px]">
             {title.length < 100 && textShortner(description, 160)}
           </p>
         </div>

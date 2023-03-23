@@ -6,6 +6,8 @@ function DiscordArticle(props: PreviewItens) {
   const { title, description, image, width, height, themeColor = "#000000" } =
     props;
   const regex = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
+  const titleMaxLength = 50;
+  const descriptionMaxLength = 300;
 
   return (
     <div class="flex  w-min">
@@ -15,12 +17,12 @@ function DiscordArticle(props: PreviewItens) {
         }] rounded-l-lg    overflow-hidden box-border `}
       >
       </div>
-      <div class="bg-discord-bg pt-2 pb-4 pl-3 pr-4 rounded-r-md max-w-[488px] w-full">
+      <div class="bg-discord-bg pt-2 pb-4 pl-3 pr-4 rounded-r-md max-w-[420px] sm:max-w-[488px] w-full">
         <h2 class="font-bold leading-[22px] mt-2 text-third">
-          {textShortner(title, 50)}
+          {textShortner(title, titleMaxLength)}
         </h2>
         <p class="leading-[1.125rem] mt-2 text-sm text-secondary break-words">
-          {textShortner(description, 300)}
+          {textShortner(description, descriptionMaxLength)}
         </p>
         <div class="min-w-[400px]">
           <Image
@@ -38,6 +40,9 @@ function DiscordArticle(props: PreviewItens) {
 
 function DiscordWebsite(props: PreviewItens) {
   const { title, description, image, width, height } = props;
+  const titleMaxLength = 50;
+  const descriptionMaxLength = 300;
+
   return (
     <div class="flex  ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
@@ -45,10 +50,10 @@ function DiscordWebsite(props: PreviewItens) {
       <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md  ">
         <div class=" rounded-r-md max-w-[392px] ">
           <h2 class="font-bold leading-[22px] mt-2 text-third max-w-[392px] w-full">
-            {textShortner(title, 50)}
+            {textShortner(title, titleMaxLength)}
           </h2>
           <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-            {textShortner(description, 300)}
+            {textShortner(description, descriptionMaxLength)}
           </p>
         </div>
         <Image

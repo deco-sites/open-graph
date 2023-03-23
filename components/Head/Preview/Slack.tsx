@@ -12,6 +12,8 @@ function SlackArticle(props: PreviewItens) {
     height,
     path,
   } = props;
+  const containerMaxLength = 1248;
+
   return (
     <div class="flex text-[15px] flex-grow max-w-[522px] ">
       <div class="flex flex-col w-[4px]  bg-divider rounded-lg    overflow-hidden box-border mr-3">
@@ -27,19 +29,19 @@ function SlackArticle(props: PreviewItens) {
           />
           <h2 class="font-bold">{path}</h2>
         </div>
-        <div class="flex flex-grow flex-col gap-[4px] sm:max-h-[600px] mr-2 sm:flex-wrap">
+        <div class="flex flex-grow flex-col gap-[4px] lg:max-h-[600px] mr-2 sm:flex-wrap ">
           <div>
             <h3 class="font-bold text-third  overflow-ellipsis">
               {title}
             </h3>
-            <p class="max-h-[250px] overflow-ellipsis">
-              {textShortner(description, 1248 - title.length)}
+            <p class="max-h-[250px] max-w-[350px] overflow-ellipsis break-words">
+              {textShortner(description, containerMaxLength - title.length)}
             </p>
           </div>
           <Image
             src={image}
             alt={title}
-            class="rounded-lg flex-[100px] min-h-[100px] min-w-[100px] w-min"
+            class="rounded-lg lg:flex-[100px] min-h-[100px] min-w-[100px] w-min"
             width={width}
             height={height}
           />

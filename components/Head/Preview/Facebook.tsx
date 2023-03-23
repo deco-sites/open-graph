@@ -4,6 +4,8 @@ import { textShortner } from "./helpers/textShortner.tsx";
 
 function FacebookBigOpenGraph(props: PreviewItens) {
   const { image, title, description, path, width, height } = props;
+  const titleMaxLength = 120;
+
   return (
     <div class="">
       <Image
@@ -21,7 +23,7 @@ function FacebookBigOpenGraph(props: PreviewItens) {
         </p>
 
         <p class="text-base  font-thin text-secondary leading-[19px]  ">
-          {textShortner(title, 120)}
+          {textShortner(title, titleMaxLength)}
         </p>
         <p class="text-sm text-common leading-[19px] overflow-ellipsis 
         overflow-hidden max-w-full  whitespace-nowrap
@@ -35,6 +37,9 @@ function FacebookBigOpenGraph(props: PreviewItens) {
 
 function FacebookMediumOpenGraph(props: PreviewItens) {
   const { image, title, description, path, width, height } = props;
+  const titleMaxLength = 90;
+  const descriptionMaxLength = 110;
+
   return (
     <div class="flex w-full">
       <Image
@@ -51,10 +56,10 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
           {path}
         </p>
         <p class="text-base  font-thin  text-secondary leading-[19px]">
-          {textShortner(title, 90)}
+          {textShortner(title, titleMaxLength)}
         </p>
         <p class="text-sm text-common leading-[19px] max-w-[360px] break-words ">
-          {textShortner(description, 110)}
+          {textShortner(description, descriptionMaxLength)}
         </p>
       </div>
     </div>
@@ -63,6 +68,9 @@ function FacebookMediumOpenGraph(props: PreviewItens) {
 
 function FacebookSmallOpenGraph(props: PreviewItens) {
   const { image, title, description, path } = props;
+  const titleMaxLength = 90;
+  const descriptionMaxLength = 110;
+
   return (
     <div class="flex w-full max-w-[522px]">
       <Image
@@ -79,11 +87,11 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
           {path}
         </p>
         <p class="text-base  font-thin text-secondary leading-[19px]">
-          {textShortner(title, 90)}
+          {textShortner(title, titleMaxLength)}
         </p>
         <p class=" text-sm text-common leading-[19px] max-w-[380px] break-words
         ">
-          {textShortner(description, 80)}
+          {textShortner(description, descriptionMaxLength)}
         </p>
       </div>
     </div>
