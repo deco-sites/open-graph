@@ -50,12 +50,12 @@ function SlackArticle(props: PreviewItens) {
     </div>
   );
 }
+
 function SlackWebsite(props: PreviewItens) {
   const {
     title,
     description,
     image,
-    type,
     width,
     height,
     path,
@@ -98,16 +98,7 @@ function SlackWebsite(props: PreviewItens) {
 }
 
 export default function Slack(props: PreviewItens) {
-  const {
-    title,
-    description,
-    image,
-    type,
-    themeColor,
-    width,
-    height,
-    path,
-  } = props;
+  const { type } = props;
 
   if (type === "website") {
     return <SlackWebsite {...props} />;

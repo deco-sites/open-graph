@@ -60,7 +60,7 @@ function WhatsAppSmallerImages(props: PreviewItens) {
 }
 
 function Whatsapp(props: PreviewItens) {
-  const { image, title, description, width } = props;
+  const { width } = props;
 
   if (width === 0) {
     return <div></div>;

@@ -4,7 +4,6 @@ import PreviewItem from "./PreviewItem.tsx";
 import LinkedIn from "./LinkedIn.tsx";
 import Discord from "./Discord.tsx";
 import { useSignal } from "@preact/signals";
-import { useRef } from "preact/hooks";
 import Facebook from "./Facebook.tsx";
 import Telegram from "./Telegram.tsx";
 import Google from "./Google.tsx";
@@ -13,9 +12,8 @@ import Slack from "./Slack.tsx";
 import instructions from "./instructions.json" assert { type: "json" };
 
 export default function PreviewHandler(propsOriginais: Props) {
-  const { title, description, image, type, themeColor } = propsOriginais;
+  const { image } = propsOriginais;
   const dimensions = useSignal<Dimensions>({ width: 0, height: 0 });
-  const imageRef = useRef<HTMLImageElement>(null);
 
   const getMeta = async (url: string) => {
     if (typeof document !== "undefined") {
@@ -31,6 +29,7 @@ export default function PreviewHandler(propsOriginais: Props) {
       const path = window.location.host;
       return path;
     }
+
     return "website.com";
   };
 
@@ -57,9 +56,6 @@ export default function PreviewHandler(propsOriginais: Props) {
 }
 
 function Preview({ props, dimensions, path }: PreviewProps) {
-  const { title, description, image, type, themeColor } = props;
-  const { width, height } = dimensions;
-
   return (
     <section class="flex flex-col items-center">
       <header class="px-10 w-full max-w-[1156px] py-8 text-primary">

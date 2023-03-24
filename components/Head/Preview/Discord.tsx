@@ -69,7 +69,7 @@ function DiscordWebsite(props: PreviewItens) {
 }
 
 export default function Discord(props: PreviewItens) {
-  const { title, description, image, type, themeColor, width, height } = props;
+  const { type } = props;
 
   if (type === "website") {
     return <DiscordWebsite {...props} />;
@@ -79,5 +79,5 @@ export default function Discord(props: PreviewItens) {
     return <DiscordArticle {...props} />;
   }
 
-  return <div></div>;
+  return <div />;
 }

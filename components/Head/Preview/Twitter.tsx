@@ -64,7 +64,7 @@ function TwitterWebsite(props: PreviewItens) {
 }
 
 function Twitter(props: PreviewItens) {
-  const { image, title, description, type, path } = props;
+  const { type } = props;
   if (type === "article") {
     return <TwitterArticle {...props} />;
   }
@@ -73,7 +73,7 @@ function Twitter(props: PreviewItens) {
     return <TwitterWebsite {...props} />;
   }
 
-  return <div></div>;
+  return <div />;
 }
 
 export default Twitter;

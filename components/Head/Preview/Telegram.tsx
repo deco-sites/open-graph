@@ -36,7 +36,7 @@ function TelegramBiggerImage(props: PreviewItens) {
 }
 
 function TelegramSmallerImage(props: PreviewItens) {
-  const { image, title, description, height, path } = props;
+  const { image, title, description, path } = props;
 
   return (
     <div class="flex gap-[6px]">
@@ -69,7 +69,7 @@ function TelegramSmallerImage(props: PreviewItens) {
 }
 
 function Telegram(props: PreviewItens) {
-  const { image, title, description, width, height, path } = props;
+  const { width, height } = props;
 
   if (width === 0) {
     return <div></div>;

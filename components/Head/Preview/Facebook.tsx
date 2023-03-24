@@ -99,11 +99,12 @@ function FacebookSmallOpenGraph(props: PreviewItens) {
 }
 
 function Facebook(props: PreviewItens) {
-  const { image, title, description, width, height } = props;
+  const { width, height } = props;
 
   if (height < 300 && height !== 0) {
     return <FacebookSmallOpenGraph {...props} />;
   }
+
   if (width > height) {
     return <FacebookBigOpenGraph {...props} />;
   }
@@ -112,7 +113,7 @@ function Facebook(props: PreviewItens) {
     return <FacebookMediumOpenGraph {...props} />;
   }
 
-  return <div></div>;
+  return <div />;
 }
 
 export default Facebook;
