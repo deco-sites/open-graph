@@ -79,7 +79,7 @@ function SlackWebsite(props: PreviewItens) {
           />
           <h2 class="font-bold">{path}</h2>
         </div>
-        <div class="flex">
+        <div class="flex gap-6">
           <div class="flex-grow flex flex-col max-w-[310px] sm:max-w-[450px] flex-shrink">
             <h3 class="font-bold text-third">{title}</h3>
             <p class="">{description}</p>

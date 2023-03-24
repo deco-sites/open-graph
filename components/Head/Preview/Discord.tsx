@@ -45,7 +45,7 @@ function DiscordWebsite(props: PreviewItens) {
 
   return (
     <div class="flex  ">
-      <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg    overflow-hidden box-border ">
+      <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg overflow-hidden box-border ">
       </div>
       <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md  ">
         <div class=" rounded-r-md max-w-[392px] ">
@@ -53,13 +53,13 @@ function DiscordWebsite(props: PreviewItens) {
             {textShortner(title, titleMaxLength)}
           </h2>
           <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-            {textShortner(description, descriptionMaxLength)}
+            {textShortner(description, descriptionMaxLength)}ss
           </p>
         </div>
         <Image
           src={image}
           alt={title}
-          class="max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min ml-2 rounded-lg"
+          class="max-h-[80px] max-w-[80px] min-h-[40px] min-w-[40px] w-min ml-2 rounded-lg object-cover"
           width={width}
           height={height}
         />
