@@ -53,7 +53,7 @@ function DiscordWebsite(props: PreviewItens) {
             {textShortner(title, titleMaxLength)}
           </h2>
           <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
-            {textShortner(description, descriptionMaxLength)}ss
+            {textShortner(description, descriptionMaxLength)}
           </p>
         </div>
         <Image
