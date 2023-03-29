@@ -66,7 +66,7 @@ function Preview({ props, dimensions, path }: PreviewProps) {
       </header>
       <div class="flex flex-col max-w-[1156px] items-center">
         <div class="flex flex-col items-center gap-[32px] mb-[20px] lg:(grid grid-cols-2 items-start justify-center)">
-          <PreviewItem instructions={instructions.google} title="Goggle">
+          <PreviewItem instructions={instructions.google} title="Google">
             <Google {...{ ...props, ...dimensions, path }} />
           </PreviewItem>
           <PreviewItem instructions={instructions.linkedin} title="Linkedin">
