@@ -55,7 +55,7 @@ function TwitterWebsite(props: PreviewItens) {
         overflow-hidden max-w-[300px]  whitespace-nowrap">
           {title}
         </p>
-        <p class="text-common leading-[20px] ">
+        <p class="text-common leading-[20px] max-w-[300px] break-words">
           {textShortner(description, descriptionMaxLength)}
         </p>
       </div>

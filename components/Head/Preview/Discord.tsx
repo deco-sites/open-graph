@@ -39,20 +39,26 @@ function DiscordArticle(props: PreviewItens) {
 }
 
 function DiscordWebsite(props: PreviewItens) {
-  const { title, description, image, width, height } = props;
+  const { title, description, image, width, height, themeColor = "#000000" } =
+    props;
+  const regex = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
   const titleMaxLength = 50;
   const descriptionMaxLength = 300;
 
   return (
     <div class="flex  ">
-      <div class="flex flex-col w-[4px]  bg-divider rounded-l-lg overflow-hidden box-border ">
+      <div
+        class={`flex flex-col w-[4px]  bg-[${
+          regex.test(themeColor) ? themeColor : "#D4DBD7"
+        }] rounded-l-lg    overflow-hidden box-border `}
+      >
       </div>
       <div class="bg-discord-bg flex pt-2 pb-4 pl-3 pr-4 rounded-r-md  ">
         <div class=" rounded-r-md max-w-[392px] ">
           <h2 class="font-bold leading-[22px] mt-2 text-third max-w-[392px] w-full">
             {textShortner(title, titleMaxLength)}
           </h2>
-          <p class="leading-[1.125rem] mt-2 text-sm text-secondary">
+          <p class="leading-[1.125rem] mt-2 text-sm text-secondary break-words">
             {textShortner(description, descriptionMaxLength)}
           </p>
         </div>
