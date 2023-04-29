@@ -1,4 +1,4 @@
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 import type { PreviewItens } from "../inteface.tsx";
 import { textShortner } from "./helpers/textShortner.tsx";
 

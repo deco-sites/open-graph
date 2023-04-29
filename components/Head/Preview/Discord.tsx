@@ -1,5 +1,5 @@
 import type { PreviewItens } from "../inteface.tsx";
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 import { textShortner } from "./helpers/textShortner.tsx";
 
 function DiscordArticle(props: PreviewItens) {
