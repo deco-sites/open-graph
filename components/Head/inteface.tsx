@@ -1,4 +1,4 @@
-import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export type OGType = "website" | "article";
 
